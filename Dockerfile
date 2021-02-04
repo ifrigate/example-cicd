@@ -1,0 +1,4 @@
+FROM php:7.4-fpm
+WORKDIR /app
+COPY . /app
+EXPOSE 9000
