@@ -2,5 +2,5 @@
 
 echo '<html>
 <head></head>
-<body>Версия 1.1</body>
+<body>Версия 1.3</body>
 </html>';
