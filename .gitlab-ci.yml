@@ -1,0 +1,13 @@
+image: localhost:5000/php-test-app:1.0
+
+deploy-deti-bela:
+  only:
+    - master
+  script:
+    - export SERVER_ADDRESS=$DB_ADDRESS
+    - export SERVER_USER=$DB_USER
+    - export SERVER_DEPLOY_PATH=$DB_DEPLOY_PATH
+    - export SERVER_SSH_KEY=$DB_SSH_KEY
+    - eval "$(ssh-agent)" > /dev/null
+    - echo -n "$SERVER_SSH_KEY" | ssh-add - > /dev/null
+    - rsync -avz -e "ssh -o 'StrictHostKeyChecking=no'" ./ $SERVER_USER@$SERVER_ADDRESS:${SERVER_DEPLOY_PATH} > /dev/null
