@@ -5,7 +5,7 @@ services:
     ports:
       - "7415:80"
     volumes:
-      - ./site.conf:/etc/nginx/conf.d/default.conf
+      - ./images/nginx/site.conf:/etc/nginx/conf.d/default.conf
     environment:
       - NGINX_PORT=80
     links:

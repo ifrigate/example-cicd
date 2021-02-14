@@ -1,6 +1,5 @@
 <?php
 
-echo '<html>
-<head></head>
-<body>Версия 1.3</body>
-</html>';
+$version = '1.4';
+$html = "<html><head></head><body>Версия $version</body></html>";
+echo $html;
